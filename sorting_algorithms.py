@@ -6,6 +6,8 @@ Created on Sun Jul 12 22:52:31 2020
 @author: michael
 """
 
+x = [5, 1, 14, 9, 36, -6, 14, .2, 7, 0 , 7, 51, 2, 4]
+
 def bubble_sort(numbers):
     arr = numbers[:]
     n = len(arr)
@@ -14,11 +16,15 @@ def bubble_sort(numbers):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
+
     
-x = [5, 1, 14, 9, 36, -6, 14, .2, 7, 0 , 7, 51, 2, 4]
-
+print("Bubble sort")
+print(x)
 print(bubble_sort(x))
+print()
 
+
+#-------------------------------------------------------
 def swap(arr, first, second):
     arr[first], arr[second] = arr[second], arr[first]
 
@@ -39,7 +45,25 @@ def selection_sort(arr):
             swap(new_arr, i, index)      
     return new_arr
 
+print("Selection sort")
+print(x)
 print(selection_sort(x))
+print()
+#-------------------------------------------------------
 
+def insert(array, index, value):  
+    i = index
+    while i >= 0 and array[i] > value:
+        array[i + 1] = array[i]
+        i -= 1
+    array[i + 1] = value
 
+def insertion_sort(arr):
+    array = arr[:]
+    for i in range(0, len(array) - 1):
+        insert(array, i, array[i + 1])
+    return array
 
+print("Insertion sort")
+print(x)
+print(insertion_sort(x))
